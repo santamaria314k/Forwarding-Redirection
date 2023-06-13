@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: mediumslateblue;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    background-color: darkgrey;
+    color: black;
+right: 50px}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+.img {
+    text-align: center;
+}
+
+.img img {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+button {
+    padding: 10px;
+    background-color:darkgrey;
+    color: #fff;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    width: 120px;
+}

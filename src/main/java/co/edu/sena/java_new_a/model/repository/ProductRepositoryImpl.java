@@ -7,56 +7,43 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepositoryImpl implements Repositoryproduct<Product>{
-
+public class ProductRepositoryImpl implements Repositoryproduct<Product> {
 
     private String sql = null;
-
-
-
-
-
 
     @Override
     public List<Product> listAllprod() throws SQLException {
         sql = "select P.id_product, P.name_product, P.value_product " +
                 "from products P order by P.name_product, P.value_product";
-        List<Product> productss = new ArrayList<>();
+        List<Product> products = new ArrayList<>();
 
         try (Connection conn = ConnectionPool.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                Product P = createprod(rs);
-                productss.add(P);
+                Product product = createprod(rs);
+                products.add(product);
             }
         }
 
-        return productss;
-    }//listAllObj
-
-
-
+        return products;
+    }
 
     @Override
     public Product byIdprod(Integer id) throws SQLException {
         sql = "select P.id_product, P.name_product, P.value_product " +
                 "from products P where P.id_product = ?";
-        Product product=null;
+        Product product = null;
 
-        try( Connection conn = ConnectionPool.getConnection();
-             PreparedStatement ps= conn.prepareStatement(sql)){
-            ps.setInt(1,id);
-            try (ResultSet rs = ps.executeQuery()){
-
-                if (rs.next()){
-                    product=createprod(rs);
-
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    product = createprod(rs);
                 }
-
             }
         }
-
 
         return product;
     }
@@ -70,7 +57,7 @@ public class ProductRepositoryImpl implements Repositoryproduct<Product>{
                     "where id_product=?";
         } else {
             sql = "insert into products(name_product, value_product) " +
-                    "values(upper(?), upper(?))";
+                    "values(?, ?)";
         }
 
         try (Connection conn = ConnectionPool.getConnection();
@@ -83,36 +70,26 @@ public class ProductRepositoryImpl implements Repositoryproduct<Product>{
 
             rowsAffected = ps.executeUpdate();
         }
+
         return rowsAffected;
     }
 
-
-
-
-
-
-
-
-
-
-
     @Override
     public void deleteprod(Integer id) throws SQLException {
-        sql ="delete from products where id_product = ?";
-        try( Connection coon = ConnectionPool.getConnection();
-             PreparedStatement ps= coon.prepareStatement(sql)){
-            ps.setInt(1,id);
+        sql = "delete from products where id_product = ?";
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, id);
             ps.executeUpdate();
         }
-
     }
 
     @Override
     public Product createprod(ResultSet rs) throws SQLException {
-        Product pro = new Product();
-        pro.setId_product(rs.getInt("id_product"));
-        pro.setName_product(rs.getString("name_product"));
-        pro.setValue_product(rs.getString("value_product"));
-        return pro;
+        Product product = new Product();
+        product.setId_product(rs.getInt("id_product"));
+        product.setName_product(rs.getString("name_product"));
+        product.setValue_product(rs.getString("value_product"));
+        return product;
     }
 }

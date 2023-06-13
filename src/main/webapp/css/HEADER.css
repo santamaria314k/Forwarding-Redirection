@@ -1,0 +1,11 @@
+footer {
+    background: deepskyblue;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    color: #6c757d;
+}

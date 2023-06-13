@@ -24,12 +24,20 @@ public class RegistreProductServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Collect all form data
-        Integer id_product = Integer.valueOf(request.getParameter("id_product"));
+        String id_pro = request.getParameter("id_product");
         String name_product = request.getParameter("name_product");
         String value_product = request.getParameter("value_product");
+    Integer idpros =null;
 
+        if (id_pro != null && !id_pro.isEmpty()) {
+            try {
+                idpros = Integer.valueOf(id_pro);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
         // Fill it up in a User bean
-        Product prop = new Product(id_product,name_product, value_product);
+        Product prop = new Product(idpros,name_product, value_product);
         // Call Repository layer and save the user object to DB
 
         Repositoryproduct<Product> therepo = new ProductRepositoryImpl();

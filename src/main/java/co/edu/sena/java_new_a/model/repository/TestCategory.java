@@ -8,7 +8,7 @@ public class TestCategory {
 
     public static void main(String[] args )throws SQLException {
         RepositoryCate<Category> caterepo = new RepositoryCateImpl();
-        System.out.println("==========save  ==========");
+        System.out.println("==========insert  ==========");
         Category CATInsert = new Category();
         CATInsert.setCategory_product(1);
         CATInsert.setName_category("dulces");

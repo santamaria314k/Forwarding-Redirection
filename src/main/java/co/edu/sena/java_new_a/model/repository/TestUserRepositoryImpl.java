@@ -1,7 +1,6 @@
 package co.edu.sena.java_new_a.model.repository;
 
 import co.edu.sena.java_new_a.model.Beans.User;
-import co.edu.sena.java_new_a.model.util.BasicConnection;
 
 import java.sql.SQLException;
 
@@ -35,7 +34,7 @@ repository.saveObj(UserInsert);
     System.out.println();
 
     System.out.println("==========  saveObj  ==========");
-    BasicConnection.User UserUpdate = new BasicConnection.User();
+    User UserUpdate = new User();
     UserUpdate.setUser_id(2);
     UserUpdate.setUser_firstname("jorge");
     UserUpdate.setUser_lastname("palacios");

@@ -4,16 +4,15 @@
 <html>
 <head>
   <title>Ingresar producto</title>
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet"href="css/styles.css">
+  <link rel="stylesheet"href="css/PRODUCTO.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 
-
-
-<%@ include file="header.jsp"%>
-
+<header class="bg-white"><%@ include file="header.jsp"%></header>
 
 
 
@@ -22,6 +21,7 @@
 
 
     <h1 class="text-dark"> Ingresar producto </h1>
+
 
     <label  for="name">Nombre del producto:</label><br>
     <input type="text" class="form-control " id="name" placeholder="Ingresa el Nombre del producto " required autofocus pattern="[A-Za-z ]{2,40}"><br>
@@ -46,10 +46,13 @@
 <br><br>
 <br><br>
 <br><br>
-<br><br>
-<br><br>
 
-<%@ include file="footer.jsp"%>
+
+
+
+
+<footer class="bg-info" ><%@ include file="footer.jsp"%></footer>
+
 
 
 </body>

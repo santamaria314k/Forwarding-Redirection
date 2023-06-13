@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: mediumslateblue;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    background-color: darkgrey;
+    color: black;
+}
+
+h4 {
+    margin: 0;
+    padding: 20px;
+    background-color: darkgrey;
+    color: black;
+}
+
+form {
+    width: 23%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #999;
+    border-radius: 5px;
+}
+
+.form-floating {
+    margin-bottom: 20px;
+}
+
+.form-floating label {
+    color: #000;
+}
+
+.form-floating input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+button {
+    padding: 10px;
+    background-color:darkgrey;
+    color: #fff;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    width: 120px;
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+.form-floating input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid deepskyblue;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}

@@ -5,7 +5,6 @@ public class Product {
     private Integer id_product;
     private String name_product;
     private String value_product;
-    private Integer category_product;
 
 
     public Product() {
@@ -15,7 +14,6 @@ public class Product {
         this.id_product = id_product;
         this.name_product = name_product;
         this.value_product = value_product;
-        this.category_product = category_product;
     }
 
     public Integer getId_product() {
@@ -42,13 +40,7 @@ public class Product {
         this.value_product = value_product;
     }
 
-    public Integer getCategory_product() {
-        return category_product;
-    }
 
-    public void setCategory_product(Integer category_product) {
-        this.category_product = category_product;
-    }
 
     @Override
     public String toString() {
@@ -56,7 +48,6 @@ public class Product {
                 "id_product=" + id_product +
                 ", name_product='" + name_product + '\'' +
                 ", value_product=" + value_product +
-                ", category_product='" + category_product + '\'' +
                 '}';
     }
 }

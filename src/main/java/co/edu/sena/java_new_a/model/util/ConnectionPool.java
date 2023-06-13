@@ -18,8 +18,8 @@ public class ConnectionPool {
             pool.setPassword(pass);
             pool.setInitialSize(5);
             pool.setMinIdle(5);
-            pool.setMaxIdle(10);
-            pool.setMaxTotal(10);
+            pool.setMaxIdle(50);
+            pool.setMaxTotal(50);
         }
         return pool;
     }

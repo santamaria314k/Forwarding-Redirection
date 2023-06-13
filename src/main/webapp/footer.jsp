@@ -2,10 +2,13 @@
 <html>
 <head>
     <title>footer</title>
+    <link rel="stylesheet" href="css/FOOTER.css">
+
 </head>
 <body>
-<footer class="bg-info">
-    <p class="mt-3 mb-3 text-muted"><%=displayDate()%> -----------------todos los derechos reservados MY APP CON BD -----------------<%=displayDate()%>       </p>
+<footer >
+
+    <h1 class="mt-3 mb-3 text-muted"><%=displayDate()%> -----------------todos los derechos reservados MY APP CON BD -----------------<%=displayDate()%>       </h1>
 
     <%!
         public String displayDate() {

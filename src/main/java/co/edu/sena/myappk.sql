@@ -3,6 +3,7 @@ use myappk;
 drop table users_tbl;
 drop database myappk;
 
+show tables;
 
 select * from users_tbl;
 select * from categories;
@@ -21,15 +22,15 @@ PRIMARY KEY (`user_id`)
 
 CREATE TABLE `categories` (
 `category_product` int    ,
-`name_category` varchar(40) NOT NULL,
+`name_category` varchar(40) ,
 PRIMARY KEY (`category_product`)
 ) ;
 ----------------------------------------------------------------------------
 
 CREATE TABLE `products` (
 `id_product` int    ,
-`name_product` varchar(40) NOT NULL,
-`value_product` varchar(40) NOT NULL,
+`name_product` varchar(40) ,
+`value_product` varchar(40) ,
 `category_product` int ,
 PRIMARY KEY (`id_product`),FOREIGN KEY (`category_product`) REFERENCES `categories`(`category_product`)
 ) ;
